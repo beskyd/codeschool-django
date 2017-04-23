@@ -26,3 +26,20 @@
 ```bash
     deactivate venv
 ```
+
+### Django
+
+---
+
+1. Create new project `Treasuregram`
+```bash
+    django-admin startproject Treasuregram
+```
+2. Run created project
+```bash
+    python manage.py runserver
+```
+3. Create an app inside our Treasuregram project
+```bash
+    python manage.py startapp main_app
+```
