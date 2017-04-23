@@ -14,7 +14,7 @@
 ```bash
     source venv/bin/activate
 ```
-4. To istall version `1.7` of Django type
+4. To install version `1.7` of Django type
 ```bash
     pip install Django==1.7
 ```
