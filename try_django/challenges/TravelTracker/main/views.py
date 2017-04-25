@@ -11,3 +11,11 @@ class Location:
         self.predators = predators
         self.num_restaurants = num_restaurants
         self.img_url = img_url
+        
+locations = [
+    Location("Fool's Falls, CO", 'Flash Floods', 0,
+             'http://courseware.codeschool.com/try_django/images/fools-falls.jpg'),
+    Location("Curly's Creek, NM", 'Rattle Snakes', 2,
+             'http://courseware.codeschool.com/try_django/images/curlys-creek.jpg'),
+    Location('The Delicate Arch, UT', 'Ghost Brigade', 5, 'http://courseware.codeschool.com/try_django/images/delicate-arch.jpg')
+]
