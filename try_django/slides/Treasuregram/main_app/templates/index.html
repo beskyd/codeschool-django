@@ -9,6 +9,11 @@
         <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css" />
     </head>
     <body>
+        <nav class="navbar navbar-default navbar-static-top text-center">
+            <a href="/">
+                <img src="{% static 'images/logo.png' %}" alt="TreasureGram"/>
+            </a>
+        </nav>
         <h1>TreasureGram</h1>
         {% for treasure in treasures %}
             <p>{{ treasure.name }}</p>
