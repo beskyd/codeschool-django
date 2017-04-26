@@ -95,3 +95,17 @@
 ```bash
     t.save()
 ```
+13. Delete object from db
+```bash
+    Treasure.objects.filter(pk = 4).delete()
+```
+14. Update object/entry's field in db
+```bash
+    t = Treasure.objects.get(pk = 1)
+    t.name = "new_name"
+    t.save(update_fields=['name'])
+```
+15. Count objects/entries in db
+ ```bash
+     Treasure.objects.count()
+```
