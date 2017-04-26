@@ -65,7 +65,7 @@
     python manage.py migrate
 ```
 
-#### Work in Python shell
+#### Work in Python/Django shell
 
 6. Run a python shell
 ```bash
