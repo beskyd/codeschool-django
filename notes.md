@@ -43,3 +43,24 @@
 ```bash
     python manage.py startapp main_app
 ```
+
+#### Perform a migration
+
+4. Make a migration file
+```bash
+    python manage.py makemigrations
+```
+
+*Optionally you could preview the SQL commands before applying the migration*
+```bash
+    python manage.py sqlmigrate app_name migration
+```
+*like so*
+```bash
+    python manage.py sqlmigrate main_app 0001
+```
+
+5. Apply the migration to the db
+```bash
+    python manage.py migrate
+```
