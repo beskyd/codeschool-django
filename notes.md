@@ -109,3 +109,16 @@
  ```bash
      Treasure.objects.count()
 ```
+
+#### Django Admin
+
+17. Create superuser
+```bash
+    python manage.py createsuperuser
+```
+18. Register models in admin.py
+```python
+    from .models import Treasure
+    
+    admin.site.register(Treasure)
+```
