@@ -64,3 +64,34 @@
 ```bash
     python manage.py migrate
 ```
+
+#### Work in Python shell
+
+6. Run a python shell
+```bash
+    python manage.py shell
+```
+7. Import models
+```bash
+    >>> from main_app.models import Treasure
+```
+8. List all Treasure objects
+```bash
+    >>> Treasure.objects.all()
+```
+9. Or filter some Treasure objects
+```bash
+    Treasure.objects.filter(location = 'Orlando, FL')
+```
+10. Get an element
+```bash
+    Treasure.objects.get(pk = 1)
+```
+11. Create an object
+```bash
+    t = Treasure(name='Coffee Can', value=20.00, location='Acme, CA', material='tin', img_url='...')
+```
+12. Save the object to db
+```bash
+    t.save()
+```
