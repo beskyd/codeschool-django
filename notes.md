@@ -10,6 +10,10 @@
 ```bash
     virtualenv venv
 ```
+*To use particular version of Python*
+```bash
+    virtualenv -p python3 venv
+```
 3. Activate virtual environment `venv`
 ```bash
     source venv/bin/activate
