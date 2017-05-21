@@ -126,3 +126,11 @@
     
     admin.site.register(Treasure)
 ```
+
+#### Cloud9
+
+Once your workspace has been created, perform a migrate then start the Django server from the terminal (bind to host $IP and port $PORT):
+```bash
+    python manage.py migrate
+    python manage.py runserver $IP:$PORT
+```

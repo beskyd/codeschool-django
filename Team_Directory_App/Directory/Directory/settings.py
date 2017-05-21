@@ -25,7 +25,7 @@ SECRET_KEY = '8ii$obh$%onb$zqfcvtfx3h-evb#_ic1ps-nqda5bjlyghu2x8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-beskyd.c9users.io']
 
 
 # Application definition
