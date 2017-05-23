@@ -127,6 +127,11 @@
     admin.site.register(Treasure)
 ```
 
+##### Fixtures
+```bash
+    python manage.py loaddata www/fixtures/team.json
+```
+
 #### Cloud9
 
 Once your workspace has been created, perform a migrate then start the Django server from the terminal (bind to host $IP and port $PORT):
