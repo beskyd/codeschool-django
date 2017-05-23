@@ -150,6 +150,11 @@ Install `whitenoise` for static files handling
 ```
 Create `requirements.txt` file for dependencies handling by heroku in the very top level where `Procfile` is. Run `pip freeze` and copy all installed info into `requirements.txt`.
 
+Create a heroku app
+```bash
+    heroku create
+```
+
 
 #### Cloud9
 
