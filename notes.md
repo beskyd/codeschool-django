@@ -132,6 +132,25 @@
     python manage.py loaddata www/fixtures/team.json
 ```
 
+##### Heroku
+
+login to heroku
+```bash
+    heroku login
+```
+Install `gunicorn` web-server. Activate virtual environment before this operation with `source venv/bin/activate`
+```bash
+    pip install gunicorn
+```
+Create `Procfile` in the very top level of the project folder where the project folder and `venv` folder are.
+
+Install `whitenoise` for static files handling
+```bash
+    pip install whitenoise
+```
+Create `requirements.txt` file for dependencies handling by heroku in the very top level where `Procfile` is. Run `pip freeze` and copy all installed info into `requirements.txt`.
+
+
 #### Cloud9
 
 Once your workspace has been created, perform a migrate then start the Django server from the terminal (bind to host $IP and port $PORT):
