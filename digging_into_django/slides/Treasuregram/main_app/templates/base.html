@@ -1,0 +1,23 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>TreasureGram</title>
+        <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css" />
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-static-top text-center">
+            <a href="/">
+                <img src="{% static 'images/logo.png' %}" alt="TreasureGram" height="90" />
+            </a>
+        </nav>
+        <main class="container container--mw700" role="main">
+            {% block content %}
+            {% endblock %}
+        </main>
+        
+    </body>
+</html>
