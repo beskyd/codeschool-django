@@ -1,43 +1,27 @@
-{% load staticfiles %}
+{% extends 'base.html' %}
+{% loadstaticfiles %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>TreasureGram</title>
-        <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css" />
-        <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css" />
-    </head>
-    <body>
-        <nav class="navbar navbar-default navbar-static-top text-center">
-            <a href="/">
-                <img src="{% static 'images/logo.png' %}" alt="TreasureGram" height="90" />
+{% block content %}
+    <div class="row">
+        {% for treasure in treasures %}
+        <div class="col-md-4">
+            <a href="/{{ treasure.id }}/">
+                <div class="treasure panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ treasure.name }}</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="treasure-photo">
+                            <img src="{{ treasure.img_url }}" height="200"/>
+                        </div>
+                    </div>
+                </div> <!-- end .panel -->
             </a>
-        </nav>
-        <main class="container container--mw700" role="main">
-            <div class="row">
-                {% for treasure in treasures %}
-                <div class="col-md-4">
-                    <a href="/{{ treasure.id }}/">
-                        <div class="treasure panel panel-default">
-                            <div class="panel-heading">
-                                <h2 class="panel-title">{{ treasure.name }}</h2>
-                            </div>
-                            <div class="panel-body">
-                                <div class="treasure-photo">
-                                    <img src="{{ treasure.img_url }}" height="200"/>
-                                </div>
-                            </div>
-                        </div> <!-- end .panel -->
-                    </a>
-                </div> <!-- end .col-md-4 -->
-                {% if forloop.counter | divisibleby: 3 %}
-                    </div><div class="row">
-                {% endif %}
-                
-                {% endfor %}
-            </div> <!-- end .row -->
-        </main>
+        </div> <!-- end .col-md-4 -->
+        {% if forloop.counter | divisibleby: 3 %}
+            </div><div class="row">
+        {% endif %}
         
-    </body>
-</html>
+        {% endfor %}
+    </div> <!-- end .row -->
+{% endblock %}
