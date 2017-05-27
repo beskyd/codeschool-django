@@ -11,7 +11,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="tracker-photo">
-                        <img src="{{ location.img_url }}" alt="" height="300" />
+                        <img src="{{ location.img.url }}" alt="" height="300" />
                     </div>
                 </div>
             </div>
@@ -19,11 +19,12 @@
     </div>
     {% endfor %}
 </div>
+
 <div class="tracker panel panel-default">
-    <form action="post_location/" method="post">
+    <form enctype="multipart/form-data" action="post_location/" method="post">
         {% csrf_token %}
-        {{ form.as_p}}
-        <input class="btn btn-primary" type="submit" value="Submit" disabled="disabled" />
+        {{ form.as_p }}
+        <input type="submit" value="Submit" />
     </form>
 </div>
-{% endblock %}
+{% endblock %} 

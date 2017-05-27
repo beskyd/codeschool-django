@@ -13,8 +13,7 @@ def detail(request, location_id):
     return render(request, 'detail.html', {'location': location})
 
 def post_location(request):
-    form = LocationForm(request.POST)
+    form = LocationForm(request.POST, request.FILES)
     if form.is_valid():
         form.save(commit=True)
-        
     return HttpResponseRedirect('/')
