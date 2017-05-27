@@ -12,26 +12,28 @@
     <nav class="navbar navbar-default navbar-static-top" role="navigation">
         <a class="navbar-brand" href="/"><img src="{% static "images/traveltracker-brand.svg" %}" height = 200 alt="Travel Tracker Brand"></a>
     </nav>
-
+  
     <main class="container">
         <div class="row">
             {% for location in locations|dictsort:'name' %}
             <div class="col-md-3">
-                <div class="tracker panel panel-default">
-                    <div class="panel-heading">
-                        <h2 class="panel-title">{{ location.name }}</h2>
-                    </div>
-                    <div class="panel-body">
-                        <div class="tracker-photo">
-                            <img src="{{ location.img_url }}" alt="" height="300" />
+                <a href="/{{ location.id }}/">
+                    <div class="tracker panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">{{ location.name }}</h2>
+                        </div>
+                        <div class="panel-body">
+                            <div class="tracker-photo">
+                                <img src="{{ location.img_url }}" alt="" height="300" />
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             {% endfor %}
         </div>
     </main>
-
+  
     <footer class="footer" role="contentinfo">
         <div class="container">
             <p class="text-muted">&copy; Travel Tracker 2016</p>
