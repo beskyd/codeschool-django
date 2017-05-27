@@ -14,4 +14,6 @@ and filters to help process data
     name | lower # returns name in lowercase
     # combining filters
     value | add: 2 | divisibleby: 3
+    # sort list items by the `name` field
+    locations | dictsort: 'name'
 ```
