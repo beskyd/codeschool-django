@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^([0-9]+)/$', views.detail, name = 'detail'),
     url(r'^post_location/$', views.post_location, name = 'post_location'),
     url(r'^user/(\w+)/$', views.profile, name='profile'),
+    url(r'^register/$', views.register, name='register'),
 ]
 
 if settings.DEBUG:
