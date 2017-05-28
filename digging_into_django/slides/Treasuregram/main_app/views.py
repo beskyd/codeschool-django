@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth.models import User
 from .models import Treasure
 from .forms import TreasureForm
 
@@ -32,3 +33,10 @@ def post_treasure(request):
         treasure.save()
         
     return HttpResponseRedirect('/')
+    
+
+def profile(request, username):
+    user = User.objects.get(username=username)
+    treasures =  Treasure.objects.filter(user=user)
+    return render(request, 'profile.html', {'username': username, 'treasures': treasures})
+    
