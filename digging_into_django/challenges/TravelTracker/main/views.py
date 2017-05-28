@@ -72,4 +72,15 @@ def logout_view(request):
 
 
 def search(request):
-    return render(request, 'search.html')
+    search_val = request.GET.get('search', None)
+
+    if (search_val != None):
+        results = []
+        locations = Location.objects.filter(name__icontains=search_val)
+        for location in locations:
+            json = {}
+            json['name'] = location.name
+            results.append(json)
+        return JsonResponse({'results':results})
+    else:
+        return render(request, 'search.html')
