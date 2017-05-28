@@ -4,5 +4,5 @@ from .models import Location
 class LocationForm(forms.ModelForm):
     class Meta:
         model = Location
-        fields = ['name', 'num_restaurants', 'predators', 'img_url']
+        fields = ['name', 'num_restaurants', 'predators', 'img']
     
