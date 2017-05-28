@@ -19,3 +19,10 @@ def post_location(request):
         location.user = request.user
         location.save()
     return HttpResponseRedirect('/')
+    
+    
+def profile(request, username):
+    user = User.objects.get(username=username)
+    locations = Location.objects.filter(user=user)
+    return render(request, 'profile.html', {'username': username, 'locations': locations})
+
