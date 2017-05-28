@@ -2,6 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Location
 from .forms import LocationForm
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm
+
 
 def home(request):
     locations = Location.objects.all()
@@ -26,3 +30,9 @@ def profile(request, username):
     locations = Location.objects.filter(user=user)
     return render(request, 'profile.html', {'username': username, 'locations': locations})
 
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/login/')
