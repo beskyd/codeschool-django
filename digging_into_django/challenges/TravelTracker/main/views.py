@@ -15,5 +15,7 @@ def detail(request, location_id):
 def post_location(request):
     form = LocationForm(request.POST, request.FILES)
     if form.is_valid():
-        form.save(commit=True)
+        location = form.save(commit = False)
+        location.user = request.user
+        location.save()
     return HttpResponseRedirect('/')
