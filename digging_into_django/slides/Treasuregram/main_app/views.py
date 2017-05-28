@@ -27,6 +27,8 @@ def post_treasure(request):
                             img_url = form.cleaned_data['img_url'])
         treasure.save()
         """
-        form.save(commit=True)
+        treasure = form.save(commit=False)
+        treasure.user = request.user
+        treasure.save()
         
     return HttpResponseRedirect('/')
