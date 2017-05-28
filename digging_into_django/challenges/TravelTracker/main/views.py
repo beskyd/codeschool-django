@@ -69,3 +69,7 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/')
+
+
+def search(request):
+    return render(request, 'search.html')
