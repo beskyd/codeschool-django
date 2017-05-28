@@ -8,8 +8,10 @@ $('#search-form').on('submit', function(event){
         success : function(json){
             var element = $('#result-list');
             element.empty();
-            for ( var i = 0, l = json.results.length; i < l; i++ ){
-                element.append('<li>' + json.results[i].name + '</li>');
+            for ( var i = 0, l = json.results.length; i < l; i++ ) {
+                element.append('<li class="list-group-item">' +
+                               '<a href="' + json.results[i].link + '">' +
+                               json.results[i].name + '</a></li>');
             }
         }
     });

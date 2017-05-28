@@ -80,6 +80,7 @@ def search(request):
         for location in locations:
             json = {}
             json['name'] = location.name
+            json['link'] = '/' + str(location.id) + '/'
             results.append(json)
         return JsonResponse({'results':results})
     else:
